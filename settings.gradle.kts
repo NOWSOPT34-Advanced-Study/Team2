@@ -23,3 +23,4 @@ rootProject.name = "Team2Android"
 include(":app")
 include(":domain")
 include(":core")
+include(":data")
