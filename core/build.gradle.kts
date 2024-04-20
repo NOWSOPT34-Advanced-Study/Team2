@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sopt.now.advenced.team2android.core"
+    namespace = "com.sopt.now.advanced.team2android.core"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     buildFeatures{

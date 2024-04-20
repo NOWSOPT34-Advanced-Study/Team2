@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sopt.now.advanced.team2android.data"
+    namespace = "com.sopt.now.advanced.team2android.feature"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     buildFeatures{
@@ -20,15 +20,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(project(":domain"))
 
     // androidx
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
 
-    // third party
-    implementation(platform(libs.okhttp.bom))
-    implementation(libs.bundles.okhttp)
-    implementation(libs.bundles.retrofit)
-    implementation(libs.kotlin.serialization.json)
+    implementation(libs.google.material)
+    implementation(libs.kotlin.coroutines)
 }

@@ -84,4 +84,5 @@ dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hil
 [bundles]
 androidx = ["androidx-core-ktx", "androidx-appcompat", "androidx-constraintlayout", "androidx-activity", "androidx-fragment", "androidx-lifecycle-viewmodel"]
 androidx-android-test = ["espresso-core", "androidx-test-ext-junit"]
-retrofit = ["retrofit", "retrofit-kotlin-serialization-converter", "okhttp-bom", "okhttp", "okhttp-logging-interceptor"]
+okhttp = ["okhttp", "okhttp-logging-interceptor"]
+retrofit = ["retrofit", "retrofit-kotlin-serialization-converter"]

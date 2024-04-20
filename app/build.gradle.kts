@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sopt.now.advenced.team2android"
+    namespace = "com.sopt.now.advanced.team2android"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.sopt.now.advenced.team2android"
+        applicationId = "com.sopt.now.advanced.team2android"
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = libs.versions.versionName.get()
         minSdk = libs.versions.minSdk.get().toInt()
@@ -38,7 +38,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature"))
     implementation(project(":core"))
+    implementation(project(":data"))
     implementation(project(":domain"))
 
     // androidx
