@@ -6,9 +6,9 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 
-//fun View.stringOf(
-//    @StringRes resId: Int
-//) = ContextCompat.getString(context, resId)
+fun View.stringOf(
+    @StringRes resId: Int
+) = ContextCompat.getString(context, resId)
 
 fun View.colorOf(
     @ColorRes resId: Int
