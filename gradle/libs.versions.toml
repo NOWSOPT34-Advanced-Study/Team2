@@ -6,7 +6,7 @@ versionCode = "1"
 versionName = "1.0.0"
 
 # Kotlin
-agp = "8.1.4"
+agp = "8.3.2"
 kotlin = "1.9.20"
 kotlin-serialization-json = "1.5.1"
 kotlinx-coroutines = "1.7.3"
@@ -81,6 +81,7 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hilt" }
 
 [bundles]
 androidx = ["androidx-core-ktx", "androidx-appcompat", "androidx-constraintlayout", "androidx-activity", "androidx-fragment", "androidx-lifecycle-viewmodel"]
