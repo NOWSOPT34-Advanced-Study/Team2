@@ -22,14 +22,17 @@ class MainActivity : BindingActivity<ActivityMainBinding>({ ActivityMainBinding.
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        dummyManager.write("testKey", "하위")
-        val value = dummyManager.read("testKey", "None")
-        Log.d("MainActivityTest", value.toString())
+        initDummyManager()
+        testDummyManager()
     }
 
     private fun initDummyManager() {
         dummyManager = DummyModule.provideDummyManager(this)
+    }
+
+    private fun testDummyManager() {
+        dummyManager.write("testKey", "하위")
+        Log.d("MainActivityTest", dummyManager.read("testKey", "None").toString())
     }
 }
