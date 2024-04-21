@@ -16,12 +16,10 @@ class MainActivity : BindingActivity<ActivityMainBinding>({ ActivityMainBinding.
     @RequiresApi(Build.VERSION_CODES.GINGERBREAD)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val sharedPreferences = getSharedPreferences("TEST", MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
+        setContentView(R.layout.activity_main)
 
-        editor.putString("TEST_INFO", "테스트 해볼게용~~")
-        editor.apply()
-
-        Log.d("MainActivity", "TEST_INFO: ${sharedPreferences.getString("TEST_INFO", "기본값")}")
+        DummyManager.write("testKey", "하위")
+        val value = DummyManager.read("testKey", "None")
+        Log.d("MainActivityTest", value.toString())
     }
 }
