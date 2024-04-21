@@ -1,4 +1,4 @@
-package com.sopt.now.advanced.team2android.feature
+package com.sopt.now.advanced.team2android.data.implementations
 
 import android.app.Activity
 import android.content.Context

@@ -5,21 +5,31 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
+import com.sopt.now.advanced.team2android.data.implementations.DummyManager
+import com.sopt.now.advanced.team2android.data.module.DummyModule
 import com.sopt.now.advanced.team2android.feature.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.now.advanced.team2android.core.ui.base.BindingActivity
+import javax.inject.Inject
 
+@RequiresApi(Build.VERSION_CODES.GINGERBREAD)
 @AndroidEntryPoint
 class MainActivity : BindingActivity<ActivityMainBinding>({ ActivityMainBinding.inflate(it) }) {
     private val viewModel: MainViewModel by viewModels()
 
-    @RequiresApi(Build.VERSION_CODES.GINGERBREAD)
+    @Inject
+    lateinit var dummyManager: DummyManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DummyManager.write("testKey", "하위")
-        val value = DummyManager.read("testKey", "None")
+        dummyManager.write("testKey", "하위")
+        val value = dummyManager.read("testKey", "None")
         Log.d("MainActivityTest", value.toString())
+    }
+
+    private fun initDummyManager() {
+        dummyManager = DummyModule.provideDummyManager(this)
     }
 }
