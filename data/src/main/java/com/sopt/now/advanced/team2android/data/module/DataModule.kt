@@ -1,10 +1,12 @@
 package com.sopt.now.advanced.team2android.data.module
 
+import com.sopt.now.advanced.team2android.data.implementations.DummyRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import org.sopt.now.advanced.team2android.domain.entity.UserEntity
+import org.sopt.now.advanced.team2android.domain.repository.DummyRepository
 import javax.inject.Singleton
 
 @Module
@@ -19,7 +21,7 @@ interface RepositoryModule {
 
     @Binds
     @Singleton
-    fun bindDummyRepository()
+    fun bindDummyRepository(dummyRepositoryImpl: DummyRepositoryImpl) : DummyRepository
 }
 
 interface DummyService {
