@@ -11,11 +11,11 @@ android {
         viewBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -26,7 +26,15 @@ dependencies {
     // androidx
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.fragment)
 
     implementation(libs.google.material)
     implementation(libs.kotlin.coroutines)
+
+    // hilt
+    implementation(libs.hilt)
+    implementation(project(":data"))
+    implementation(project(":data"))
 }
