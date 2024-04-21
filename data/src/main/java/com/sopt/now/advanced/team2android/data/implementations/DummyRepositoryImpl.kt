@@ -11,5 +11,4 @@ class DummyRepositoryImpl @Inject constructor(
     override fun getDummyUserList(page: Int): Result<List<UserEntity>> {
         TODO("Not yet implemented")
     }
-
 }
