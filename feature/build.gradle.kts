@@ -35,6 +35,4 @@ dependencies {
 
     // hilt
     implementation(libs.hilt)
-    implementation(project(":data"))
-    implementation(project(":data"))
 }
