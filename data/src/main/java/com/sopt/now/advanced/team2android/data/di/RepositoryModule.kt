@@ -1,6 +1,5 @@
 package com.sopt.now.advanced.team2android.data.di
 
-import com.sopt.now.advanced.team2android.data.dataSource.local.DummyDataSourceImpl
 import com.sopt.now.advanced.team2android.data.repository.DummyRepositoryImpl
 import dagger.Binds
 import dagger.Module

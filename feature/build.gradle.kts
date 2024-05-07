@@ -30,7 +30,10 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.fragment)
 
+    // material
     implementation(libs.google.material)
+
+    // coroutines
     implementation(libs.kotlin.coroutines)
 
     // hilt

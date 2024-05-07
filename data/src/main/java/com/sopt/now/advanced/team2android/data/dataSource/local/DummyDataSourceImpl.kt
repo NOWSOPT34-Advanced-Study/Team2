@@ -17,9 +17,8 @@ class DummyDataSourceImpl @Inject constructor(@ApplicationContext context: Conte
 
     override var dummy: String
         get() = pref.getString(DUMMY_KEY, "") ?: ""
-        set(value) {
-            pref.edit { putString(DUMMY_KEY, value) }
-        }
+        set(value) = pref.edit { putString(DUMMY_KEY, value) }
+
 
     companion object {
         private const val DUMMY_KEY = "Dummy"

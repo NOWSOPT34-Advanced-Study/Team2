@@ -13,7 +13,6 @@ import javax.inject.Singleton
 class UseCaseModule {
     @Provides
     @Singleton
-    fun provideDummyUseCase(dummyRepository: DummyRepository): PutDummyDataUseCase {
-        return PutDummyDataUseCase(dummyRepository)
-    }
+    fun provideDummyUseCase(dummyRepository: DummyRepository): PutDummyDataUseCase =
+        PutDummyDataUseCase(dummyRepository = dummyRepository)
 }
