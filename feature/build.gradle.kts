@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -30,11 +32,13 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.fragment)
 
+    // material
     implementation(libs.google.material)
+
+    // coroutines
     implementation(libs.kotlin.coroutines)
 
     // hilt
     implementation(libs.hilt)
-    implementation(project(":data"))
-    implementation(project(":data"))
+    kapt(libs.hilt.compiler)
 }
