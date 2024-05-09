@@ -41,4 +41,9 @@ dependencies {
     // hilt
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
+
+    // navigation
+    implementation(libs.bundles.navigation)
+
+    apply(plugin = "androidx.navigation.safeargs.kotlin")
 }

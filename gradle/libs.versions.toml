@@ -18,6 +18,7 @@ constraintlayout = "2.1.4"
 activity = "1.8.2"
 fragment = "1.6.2"
 lifecycle = "2.7.0"
+navigation = "2.5.0"
 
 # Google
 material = "1.11.0"
@@ -51,6 +52,9 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-activity = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
 androidx-fragment = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
 androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-navigation-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+androidx-navigation-safe-args = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation" }
 
 # Google
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -88,3 +92,4 @@ androidx = ["androidx-core-ktx", "androidx-appcompat", "androidx-constraintlayou
 androidx-android-test = ["espresso-core", "androidx-test-ext-junit"]
 okhttp = ["okhttp", "okhttp-logging-interceptor"]
 retrofit = ["retrofit", "retrofit-kotlin-serialization-converter"]
+navigation = ["androidx-navigation-ktx", "androidx-navigation-ui-ktx"]
