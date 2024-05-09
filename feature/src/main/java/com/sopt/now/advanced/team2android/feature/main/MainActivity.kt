@@ -24,7 +24,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>({ ActivityMainBinding.
 
     private fun observeDummyData() {
         viewModel.dummy.observe(this) {
-            Log.e("Dummy", it.dummy)
+            Log.e("DummyTest", it.dummy)
         }
     }
 }
