@@ -14,10 +14,10 @@
         android:theme="@style/Theme.Team2Android"
         tools:targetApi="31">
         <activity
-            android:name="com.sopt.now.advanced.team2android.feature.main.MainActivity"
+            android:name="com.sopt.now.advanced.team2android.feature.presentation.common.CommonActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" >
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,5 +25,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
