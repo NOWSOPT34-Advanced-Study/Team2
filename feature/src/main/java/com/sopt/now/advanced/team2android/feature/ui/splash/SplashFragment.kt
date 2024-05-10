@@ -1,4 +1,4 @@
-package com.sopt.now.advanced.team2android.feature.presentation.splash
+package com.sopt.now.advanced.team2android.feature.ui.splash
 
 import android.os.Bundle
 import android.view.View

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Team2Android"
         tools:targetApi="31">
         <activity
-            android:name="com.sopt.now.advanced.team2android.feature.presentation.common.CommonActivity"
+            android:name="com.sopt.now.advanced.team2android.feature.ui.common.CommonActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">

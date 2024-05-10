@@ -1,4 +1,4 @@
-package com.sopt.now.advanced.team2android.feature.presentation.home
+package com.sopt.now.advanced.team2android.feature.ui.home
 
 import android.os.Bundle
 import android.util.Log

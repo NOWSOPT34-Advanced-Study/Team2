@@ -1,4 +1,4 @@
-package com.sopt.now.advanced.team2android.feature.presentation.signUp
+package com.sopt.now.advanced.team2android.feature.ui.signUp
 
 import com.sopt.now.advanced.team2android.feature.databinding.FragmentSignUpBinding
 import org.sopt.now.advanced.team2android.core.ui.base.BindingFragment

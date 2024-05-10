@@ -1,4 +1,4 @@
-package com.sopt.now.advanced.team2android.feature.presentation.signIn
+package com.sopt.now.advanced.team2android.feature.ui.signIn
 
 import android.os.Bundle
 import android.view.View
