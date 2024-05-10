@@ -4,16 +4,16 @@
     <item
         android:id="@+id/searchFragment"
         android:icon="@drawable/ic_main_search"
-        android:title="Search" />
+        android:title="@string/menu_search" />
 
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_main_home"
-        android:title="Home" />
+        android:title="@string/menu_home" />
 
 
     <item
         android:id="@+id/myPageFragment"
         android:icon="@drawable/ic_main_my_page"
-        android:title="My Page" />
+        android:title="@string/menu_my_page" />
 </menu>

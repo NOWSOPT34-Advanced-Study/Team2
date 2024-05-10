@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_search">Search</string>
+    <string name="menu_my_page">My Page</string>
+    <string name="menu_home">Home</string>
+</resources>
