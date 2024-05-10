@@ -12,13 +12,17 @@ class SignInFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupNavigateToHomeClickListener()
+        setupSignUpBtnClickListener()
     }
 
-    private fun setupNavigateToHomeClickListener() {
+    private fun setupSignUpBtnClickListener() {
         binding.tvSignIn.setOnClickListener {
-            Snackbar.make(binding.root, "로그인 버튼 클릭", Snackbar.LENGTH_SHORT).show()
-            findNavController().navigate(SignInFragmentDirections.actionSignInToHome())
+            navigateToHome()
         }
+    }
+
+    private fun navigateToHome() {
+        Snackbar.make(binding.root, "로그인 버튼 클릭", Snackbar.LENGTH_SHORT).show()
+        findNavController().navigate(SignInFragmentDirections.actionSignInToHome())
     }
 }
