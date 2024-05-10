@@ -24,7 +24,4 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.google.material)
     implementation(libs.kotlin.coroutines)
-
-    // navigation
-    implementation(libs.bundles.navigation)
 }
