@@ -16,7 +16,7 @@ class SignInFragment :
     }
 
     private fun setupSignUpBtnClickListener() {
-        binding.tvSignIn.setOnClickListener {
+        binding.btnSignIn.setOnClickListener {
             navigateToHome()
         }
     }
