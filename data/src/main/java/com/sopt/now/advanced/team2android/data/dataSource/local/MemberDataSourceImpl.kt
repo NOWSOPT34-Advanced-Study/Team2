@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.IOException
 import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.stringPreferencesKey
@@ -24,14 +23,13 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
 class MemberDataSourceImpl @Inject constructor(
     @ApplicationContext context: Context,
 ) : MemberDataSource {
-    private val IS_SIGN_IN_MEMBER_MANAGER = booleanPreferencesKey("is_sign_in_member_manager")
 
     private object PreferencesKeys {
         val MEMBER_ID: Preferences.Key<String> = stringPreferencesKey("id")
         val MEMBER_PW: Preferences.Key<String> = stringPreferencesKey("pw")
     }
 
-    val idPreferencesFlow: Flow<String> = context.dataStore.data
+    private val idPreferencesFlow: Flow<String> = context.dataStore.data
         .catch {
             if (it is IOException) {
                 emit(emptyPreferences())
@@ -40,10 +38,10 @@ class MemberDataSourceImpl @Inject constructor(
             }
         }
         .map { preferences ->
-            preferences[PreferencesKeys.MEMBER_ID] ?: ""
+            preferences[PreferencesKeys.MEMBER_ID] ?: "데이터 없음"
         }
 
-    val pwPreferencesFlow: Flow<String> = context.dataStore.data
+    private val pwPreferencesFlow: Flow<String> = context.dataStore.data
         .catch {
             if (it is IOException) {
                 emit(emptyPreferences())
@@ -52,34 +50,22 @@ class MemberDataSourceImpl @Inject constructor(
             }
         }
         .map { preferences ->
-            preferences[PreferencesKeys.MEMBER_PW] ?: ""
+            preferences[PreferencesKeys.MEMBER_PW] ?: "데이터 없음"
         }
 
 
-    val preferenceFlow: Flow<Boolean> = context.dataStore.data
-        .catch {
-            if (it is IOException) {
-                it.printStackTrace()
-                emit(emptyPreferences())
-            } else {
-                throw it
-            }
-        }
-        .map { preferences ->
-            preferences[IS_SIGN_IN_MEMBER_MANAGER] ?: true
-        }
-
-    suspend fun saveMemberToPreferencesStore(isSignInMemberManager: Boolean, context: Context) {
+    suspend fun saveMemberToPreferencesStore(id: String, pw: String, context: Context) {
         context.dataStore.edit { preferences ->
-            preferences[IS_SIGN_IN_MEMBER_MANAGER] = isSignInMemberManager
+            preferences[PreferencesKeys.MEMBER_ID] = id
+            preferences[PreferencesKeys.MEMBER_PW] = pw
         }
     }
 
     override var id: String
-        get() = ""
+        get() = idPreferencesFlow.toString()
         set(value) {}
     override var pw: String
-        get() = ""
+        get() = pwPreferencesFlow.toString()
         set(value) {}
 
 }
