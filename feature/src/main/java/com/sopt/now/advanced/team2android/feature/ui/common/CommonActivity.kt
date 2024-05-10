@@ -1,6 +1,7 @@
 package com.sopt.now.advanced.team2android.feature.ui.common
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -26,30 +27,42 @@ class CommonActivity :
     }
 
     private fun setupNavHost() {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fcv_common_nav_host) as NavHostFragment?
-                ?: return
-        navController = navHostFragment.navController
+        setupNavHostFragment()
         setupDestinationListener()
         setupBottomNavigation()
     }
 
+    private fun setupNavHostFragment() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fcv_common_nav_host) as NavHostFragment?
+                ?: return
+        navController = navHostFragment.navController
+    }
+
     private fun setupDestinationListener() {
         navController.addOnDestinationChangedListener { _: NavController?, destination: NavDestination, _: Bundle? ->
-            if (destination.id in BottomNavItems.bottomNavItems) {
-                binding.bnvMain.visibility = View.VISIBLE
-            } else {
-                binding.bnvMain.visibility = View.GONE
-            }
+            changeVisibilityOfBottomNav(destination)
+        }
+    }
+
+    private fun changeVisibilityOfBottomNav(destination: NavDestination) {
+        if (destination.id in BottomNavItems.bottomNavItems) {
+            binding.bnvMain.visibility = View.VISIBLE
+        } else {
+            binding.bnvMain.visibility = View.GONE
         }
     }
 
     private fun setupBottomNavigation() {
         binding.bnvMain.setupWithNavController(navController)
         binding.bnvMain.setOnItemSelectedListener { item ->
-            NavigationUI.onNavDestinationSelected(item, navController)
-            Snackbar.make(binding.root, item.title.toString(), Snackbar.LENGTH_SHORT).show()
+            handleBottomNavItemClick(item)
             return@setOnItemSelectedListener true
         }
+    }
+
+    private fun handleBottomNavItemClick(item: MenuItem) {
+        NavigationUI.onNavDestinationSelected(item, navController)
+        Snackbar.make(binding.root, item.title.toString(), Snackbar.LENGTH_SHORT).show()
     }
 }
