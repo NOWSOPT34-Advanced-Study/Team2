@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.snackbar.Snackbar
 import com.sopt.now.advanced.team2android.feature.R
 import com.sopt.now.advanced.team2android.feature.databinding.ActivityCommonBinding
+import com.sopt.now.advanced.team2android.feature.model.BottomNavItems
 import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.now.advanced.team2android.core.ui.base.BindingActivity
 
@@ -34,14 +35,8 @@ class CommonActivity :
     }
 
     private fun setupDestinationListener() {
-        val mainFragmentList = listOf(
-            R.id.homeFragment,
-            R.id.searchFragment,
-            R.id.myPageFragment
-        )
-
         navController.addOnDestinationChangedListener { _: NavController?, destination: NavDestination, _: Bundle? ->
-            if (destination.id in mainFragmentList) {
+            if (destination.id in BottomNavItems.bottomNavItems) {
                 binding.bnvMain.visibility = View.VISIBLE
             } else {
                 binding.bnvMain.visibility = View.GONE
