@@ -12,6 +12,10 @@ class SignInFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupNavigateToHomeClickListener()
+    }
+
+    private fun setupNavigateToHomeClickListener() {
         binding.tvSignIn.setOnClickListener {
             Snackbar.make(binding.root, "로그인 버튼 클릭", Snackbar.LENGTH_SHORT).show()
             findNavController().navigate(SignInFragmentDirections.actionSignInToHome())
