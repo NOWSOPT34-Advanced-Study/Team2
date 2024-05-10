@@ -44,6 +44,5 @@ dependencies {
 
     // navigation
     implementation(libs.bundles.navigation)
-
     apply(plugin = "androidx.navigation.safeargs.kotlin")
 }
