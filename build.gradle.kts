@@ -1,6 +1,7 @@
 buildscript {
     dependencies {
         classpath(libs.hilt.plugin)
+        classpath(libs.androidx.navigation.safe.args)
     }
 }
 

@@ -1,4 +1,4 @@
-package com.sopt.now.advanced.team2android.feature.main
+package com.sopt.now.advanced.team2android.feature.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,7 +9,7 @@ import org.sopt.now.advanced.team2android.domain.usecase.PutDummyDataUseCase
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class HomeViewModel @Inject constructor(
     private val putDummyDataUseCase: PutDummyDataUseCase
 ) : ViewModel() {
 
