@@ -5,7 +5,6 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.sopt.now.advanced.team2android.feature.databinding.FragmentSignInBinding
-import com.sopt.now.advanced.team2android.feature.ui.signUp.SignUpFragmentDirections
 import org.sopt.now.advanced.team2android.core.ui.base.BindingFragment
 
 class SignInFragment :
