@@ -26,6 +26,7 @@ dependencies {
     // androidx
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.datastore)
 
     // third party
     implementation(platform(libs.okhttp.bom))
