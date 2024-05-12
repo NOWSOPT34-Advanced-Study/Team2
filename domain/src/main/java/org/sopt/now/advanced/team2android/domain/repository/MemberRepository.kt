@@ -1,7 +1,11 @@
 package org.sopt.now.advanced.team2android.domain.repository
 
+import kotlinx.coroutines.flow.Flow
 import org.sopt.now.advanced.team2android.domain.entity.MemberEntity
 
 interface MemberRepository {
-    fun getSignInMemberData(id: String, pw: String): Result<MemberEntity>
+    val id: Flow<String>
+    val pw: Flow<String>
+    val nickname: Flow<String>
+    suspend fun saveMemberData(memberEntity: MemberEntity)
 }
