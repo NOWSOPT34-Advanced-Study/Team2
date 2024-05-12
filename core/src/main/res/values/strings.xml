@@ -19,4 +19,6 @@
     <string name="sign_up_phone_error">010-0000-0000의 형태로 입력해 주세요</string>
     <string name="sign_up_success">회원가입에 성공하였습니다</string>
 
+    <!-- main (my page) -->
+    <string name="my_page_my_page">마이페이지</string>
 </resources>
