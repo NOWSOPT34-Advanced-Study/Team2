@@ -12,19 +12,20 @@ import org.sopt.now.advanced.team2android.core.ui.base.BindingFragment
 @AndroidEntryPoint
 class SignInFragment :
     BindingFragment<FragmentSignInBinding>({ FragmentSignInBinding.inflate(it) }) {
-
     private val viewModel: SignInViewModel by viewModels()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.fetchIdInfo()
+        viewModel.fetchPwInfo()
         setupSignInBtnClickListener()
         setupSignUpBtnClickListener()
     }
 
     private fun setupSignInBtnClickListener() {
         binding.btnSignIn.setOnClickListener {
-            getMemberPreferences()
-            navigateToHome()
+            signIn()
         }
     }
 
@@ -34,13 +35,15 @@ class SignInFragment :
         }
     }
 
-    private fun getMemberPreferences() {
-        viewModel.getSignInMemberData(
-            binding.edtSignInId.text.toString(),
-            binding.edtSignInPw.text.toString(),
-        )
-        viewModel.member.observe(viewLifecycleOwner) { data ->
-            Snackbar.make(binding.root, "아이디: ${data.id}, 비밀번호: ${data.pw}", Snackbar.LENGTH_SHORT).show()
+    private fun signIn() {
+        viewModel.signIn(
+            id = binding.edtSignInId.text.toString(),
+            pw = binding.edtSignInPw.text.toString(),
+        ).let { isSignInSuccess ->
+            if (isSignInSuccess) {
+                Snackbar.make(binding.root, "로그인 성공", Snackbar.LENGTH_SHORT).show()
+                navigateToHome()
+            }
         }
     }
 
@@ -49,7 +52,6 @@ class SignInFragment :
     }
 
     private fun navigateToSignUp() {
-        Snackbar.make(binding.root, "회원가입 버튼 클릭", Snackbar.LENGTH_SHORT).show()
         findNavController().navigate(SignInFragmentDirections.actionSignInToSignUp())
     }
 }
