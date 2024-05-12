@@ -11,8 +11,6 @@ class MemberRepositoryImpl @Inject constructor(private val memberDataSource: Mem
     override fun getSignInMemberData(id: String, pw: String): Result<MemberEntity> {
         memberDataSource.id = id
         memberDataSource.pw = pw
-        Log.d("SignInRepository", memberDataSource.id)
-        Log.d("SignInRepository", memberDataSource.pw)
         return Result.success(MemberEntity(memberDataSource.id, memberDataSource.pw))
     }
 }
