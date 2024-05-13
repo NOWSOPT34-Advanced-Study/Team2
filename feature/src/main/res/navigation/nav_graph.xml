@@ -30,7 +30,7 @@
         android:name="com.sopt.now.advanced.team2android.feature.ui.signUp.SignUpFragment"
         android:label="fragment_sign_up">
         <action
-            android:id="@+id/action_sign_up_to_home"
+            android:id="@+id/action_sign_up_to_sign_in"
             app:destination="@id/signInFragment" />
     </fragment>
 
