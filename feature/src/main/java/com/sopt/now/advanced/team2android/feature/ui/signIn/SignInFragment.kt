@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.sopt.now.advanced.team2android.feature.R
 import com.sopt.now.advanced.team2android.feature.databinding.FragmentSignInBinding
 import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.now.advanced.team2android.core.ui.base.BindingFragment
@@ -41,7 +42,11 @@ class SignInFragment :
             pw = binding.edtSignInPw.text.toString(),
         ).let { isSignInSuccess ->
             if (isSignInSuccess) {
-                Snackbar.make(binding.root, "로그인 성공", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(
+                    binding.root,
+                    com.sopt.now.advanced.team2android.core.R.string.sign_in_success,
+                    Snackbar.LENGTH_SHORT
+                ).show()
                 navigateToHome()
             }
         }
