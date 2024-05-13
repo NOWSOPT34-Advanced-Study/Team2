@@ -1,6 +1,8 @@
 package com.sopt.now.advanced.team2android.feature.ui.signUp
 
+import android.os.Build
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -18,7 +20,15 @@ class SignUpFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initLayout()
         setSignUpBtnClickListeners()
+    }
+
+    private fun initLayout() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+            binding.etSignUpPassword.editText.inputType =
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        }
     }
 
     private fun setSignUpBtnClickListeners() {
