@@ -26,9 +26,7 @@ class MemberDataSourceImpl @Inject constructor(
         dataStore.edit { preferences ->
             preferences[PreferencesKeys.MEMBER_ID] = member.id
             preferences[PreferencesKeys.MEMBER_PW] = member.pw
-            member.nickname?.let {
-                preferences[PreferencesKeys.MEMBER_NICKNAME] = it
-            }
+            preferences[PreferencesKeys.MEMBER_NICKNAME] = member.nickname
         }
     }
 
